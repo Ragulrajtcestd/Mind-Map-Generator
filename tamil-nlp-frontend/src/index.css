@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Educational & Friendly Design System
+   Warm, inviting colors perfect for students and teachers
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 40 33% 98%;
+    --foreground: 220 25% 20%;
+
+    /* Cards with soft warmth */
+    --card: 40 40% 99%;
+    --card-foreground: 220 25% 20%;
+
+    --popover: 40 40% 99%;
+    --popover-foreground: 220 25% 20%;
+
+    /* Friendly teal primary */
+    --primary: 174 58% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft orange secondary */
+    --secondary: 24 85% 92%;
+    --secondary-foreground: 24 70% 30%;
+
+    /* Muted warm gray */
+    --muted: 40 20% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - coral/peach */
+    --accent: 15 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 174 58% 39%;
+
+    --radius: 1rem;
+
+    /* Mind map node colors */
+    --node-root: 174 58% 39%;
+    --node-level1: 15 80% 60%;
+    --node-level2: 199 89% 48%;
+    --node-level3: 142 71% 45%;
+    --node-level4: 262 83% 58%;
+
+    /* Sidebar */
+    --sidebar-background: 40 30% 96%;
+    --sidebar-foreground: 220 25% 20%;
+    --sidebar-primary: 174 58% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 85% 92%;
+    --sidebar-accent-foreground: 24 70% 30%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 174 58% 39%;
+
+    /* Font families */
+    --font-heading: 'Quicksand', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+  }
+
+  .dark {
+    /* Rich dark blue background */
+    --background: 222 47% 11%;
+    --foreground: 40 33% 96%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 40 33% 96%;
+
+    /* Bright teal primary */
+    --primary: 174 60% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    /* Warm orange secondary */
+    --secondary: 24 50% 25%;
+    --secondary-foreground: 24 85% 85%;
+
+    --muted: 222 30% 20%;
+    --muted-foreground: 40 15% 65%;
+
+    /* Coral accent */
+    --accent: 15 75% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 80% 45%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 222 30% 25%;
+    --input: 222 30% 25%;
+    --ring: 174 60% 50%;
+
+    /* Dark mode node colors */
+    --node-root: 174 60% 50%;
+    --node-level1: 15 75% 55%;
+    --node-level2: 199 80% 55%;
+    --node-level3: 142 60% 50%;
+    --node-level4: 262 75% 65%;
+
+    /* Sidebar dark */
+    --sidebar-background: 222 47% 13%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 174 60% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 24 50% 25%;
+    --sidebar-accent-foreground: 24 85% 85%;
+    --sidebar-border: 222 30% 25%;
+    --sidebar-ring: 174 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+/* Custom animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
