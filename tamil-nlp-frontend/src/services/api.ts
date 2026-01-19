@@ -1,6 +1,6 @@
 // src/services/api.ts
 
-const API_BASE_URL = "http://127.0.0.1:5000";
+const API_BASE_URL = "https://mind-map-generator-4.onrender.com";
 
 // 🔹 EXACT backend keyword shape
 export type BackendKeyword = {
